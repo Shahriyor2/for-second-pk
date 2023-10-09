@@ -1,0 +1,11 @@
+         <Info
+            title={isOrderComplete ? "Заказ оформлен" : "Корзина пустая"}
+            description={
+              isOrderComplete
+                ? "Ваш заказ #18 скоро будет передан курьерской доставке"
+                : "Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
+            }
+            image={
+              isOrderComplete ? "/img/complete-order.png" : "/img/corobka.jpg"
+            }
+          />
