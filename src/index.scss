@@ -116,7 +116,6 @@ header {
   }
 }
 
-
 .cartTotalBlock {
   ul {
     display: block;
@@ -223,57 +222,86 @@ header {
     margin-bottom: 40px;
   }
 
-  .greenButton{
+  .greenButton {
     img {
       position: relative;
       //transform: rotate(180deg);
       right: 25px;
       transition: transform 0.2s ease-in-out;
     }
-    &:hover{
-      img{
+    &:hover {
+      img {
         transform: translateX(-5px);
       }
     }
   }
 }
 
-.text-uppercase{
-  h1{
+.text-uppercase {
+  h1 {
     margin: 0;
   }
 }
 
-.ul-pct{
-  img{
+.ul-pct {
+  img {
     transition: transform 0.2s ease-in-out;
   }
-  img:hover{
+  img:hover {
     transform: translateY(-5px);
   }
 }
 
 .toObratno {
   transition: transform 0.3s ease-in-out;
-  &:hover{
+  &:hover {
     transform: translateX(-5px);
   }
 }
 
-.Validation{
-  h1{
+.Validation {
+  margin-top: 150px;
+  position: relative;
+  left: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  h1 {
     text-align: center;
   }
 
   input {
     width: 200px;
     margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 20px;
+    width: 240px;
+    height: 35px;
+    margin-bottom: 5px;
   }
 
   span {
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     display: flex;
-    
+  }
+
+  button {
+    width: 273px;
+    height: 53px;
+    background: #69f547;
+    transition: background 0.3s ease-in-out;
+    margin-top: 50px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+
+    &:hover {
+      background: lighten($color: #71f550, $amount: 5%);
+    }
+
+    &:active {
+      background: darken($color: #63ad01, $amount: 0);
+    }
   }
 }

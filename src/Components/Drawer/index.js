@@ -9,11 +9,13 @@ import Inputs from "../Input";
 function Drawer({ onClose, onDeleteFromCart, cartItems, opened }) {
   const [isOrderComplete, setisOrderComplete] = useState(false);
   const { setCartItems } = useContext(AppContext);
+  const [isCheked, setIsCheked] = useState(false)
 
   const onClickOrder = () => {
     setisOrderComplete(true);
     setCartItems([]);
-  };
+   };
+
 
   const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
 
@@ -31,7 +33,7 @@ function Drawer({ onClose, onDeleteFromCart, cartItems, opened }) {
         </h2>
 
         {cartItems.length > 0 ? (
-          <div className="d-flex flex-column">
+          <div className={styles.main}>
             <div className={styles.items}>
               {cartItems?.map((obj) => (
                 <div
@@ -69,7 +71,7 @@ function Drawer({ onClose, onDeleteFromCart, cartItems, opened }) {
                 <li>
                   <span>Налог 5%: </span>
                   <div></div>
-                  <b>{(totalPrice / 100) * 5} руб. </b>
+                  <b>{Math.round((totalPrice / 100) * 5)} руб. </b>
                 </li>
               </ul>
               <button onClick={onClickOrder} className="greenButton">
@@ -78,25 +80,24 @@ function Drawer({ onClose, onDeleteFromCart, cartItems, opened }) {
             </div>
           </div>
         ) : isOrderComplete ? (
-          <Inputs setisOrderComplete={setisOrderComplete}/>
-        ) : isOrderComplete ?
+          <Inputs setisOrderComplete={setisOrderComplete} isCheked={isCheked} setIsCheked={setIsCheked}/>
+        ) : isCheked ? (
           <Info
-            title={"Заказ оформлен"}
-            description={
-                "Ваш заказ #18 скоро будет передан курьерской доставке"
-            }
-            image={"/img/complete-order.png"
-            }
-          />
-          :   <Info
+          title={"Заказ оформлен"}
+          description={
+            "Ваш заказ #18 скоро будет передан курьерской доставке"
+          }
+          image={"/img/complete-order.png"}
+        />
+        ) : (
+          <Info
           title={"Корзина пустая"}
           description={
             "Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
           }
-          image={"/img/corobka.jpg"
-          }
+          image={"/img/corobka.jpg"}
         />
-        }
+        )}
       </div>
     </div>
   );

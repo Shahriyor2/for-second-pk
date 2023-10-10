@@ -21,6 +21,13 @@
         transform: translateX(0);
     }
   }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+  }
   
   .drawer {
     position: absolute;
@@ -55,6 +62,12 @@
     }
   }
   .cartTotalBlock {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    padding: 12px;
     ul {
       display: block;
       margin-bottom: 40px !important ;
