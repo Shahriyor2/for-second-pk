@@ -7,7 +7,7 @@ function Inputs({
   isCheked,
   setIsCheked,
 }) {
-  const {setCartOpened} = React.useContext(AppContext);
+  const { setCartOpened } = React.useContext(AppContext);
 
   const onClickCheked = () => {
     setisOrderComplete(false);
@@ -24,21 +24,35 @@ function Inputs({
           <input type="name" placeholder="Фамилия Имя"></input>
           <span>Телефон</span>
           <input
-            type="number"
-            name="tel"
-            pattern=" [0-9]{,9}"
-            placeholder="Номер телефона +992"
+            // type="tel"
+            // name="number"
+            // value="+992"
+            // // pattern="^\+992[1-9]{10}$"
+            // placeholder="Номер телефона +992"                          400 570
+             type="tel" name="phone" maxlength="16" placeholder="+992(___)___-___"  id="phone"
           ></input>
           <span>Email</span>
           <input
             type="email"
             name="login"
-            pattern=" [0-9]{,9}"
             placeholder="адресс электронной почты"
+            required
+          ></input>
+
+          <input
+            className="commentBtn"
+            type="text"
+            placeholder="введите комментарий"
+            minlength="7"
+            maxlength="100"
           ></input>
           <button onClick={onClickCheked}>Отправить</button>
 
-          <button onClick={() => setCartOpened(false)} type="button" className="greenButton">
+          <button
+            onClick={() => setCartOpened(false)}
+            type="button"
+            className="greenButton"
+          >
             <img src="img/Стрелка-назад.svg" alt="Arrow" />
             Вернуться назад
           </button>

@@ -261,6 +261,11 @@ header {
 
 .Validation {
   // margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   position: relative;
   left: 10px;
   padding: 20px;
@@ -272,7 +277,7 @@ header {
 
   input {
     width: 200px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     border-radius: 5px;
     padding: 20px;
     width: 240px;
@@ -281,7 +286,7 @@ header {
 
   span {
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     display: flex;
   }
 
@@ -290,7 +295,7 @@ header {
     height: 53px;
     background: #69f547;
     transition: background 0.3s ease-in-out;
-    margin-top: 50px;
+    margin-top: 25px;
     border-radius: 5px;
     border: none;
     font-size: 18px;
@@ -303,5 +308,13 @@ header {
     &:active {
       background: darken($color: #63ad01, $amount: 0);
     }
+
+    .commentBtn {
+      width: 200px;
+    }
   }
+}
+
+.Validation > .commentBtn {
+  height: 50px;
 }
