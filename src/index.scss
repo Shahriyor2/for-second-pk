@@ -260,7 +260,7 @@ header {
 }
 
 .Validation {
-  margin-top: 150px;
+  // margin-top: 150px;
   position: relative;
   left: 10px;
   padding: 20px;
@@ -277,7 +277,6 @@ header {
     padding: 20px;
     width: 240px;
     height: 35px;
-    margin-bottom: 5px;
   }
 
   span {
@@ -295,9 +294,10 @@ header {
     border-radius: 5px;
     border: none;
     font-size: 18px;
+    color: white;
 
     &:hover {
-      background: lighten($color: #71f550, $amount: 5%);
+      background: lighten($color: #69f547, $amount: 5%);
     }
 
     &:active {
